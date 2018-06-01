@@ -14,25 +14,28 @@ public class TeamTest {
 
     @Test
     public void teamClassInstantiatesCorrectly_isTrue() throws Exception {
-        Team testTeam = new Team("name");
+        Team testTeam = new Team();
         assertEquals(true, testTeam instanceof Team);
     }
 
     @Test
     public void teamClassInstantiatesCorrectly_withTeamName() throws Exception {
-        String teamName = "name";
-        Team testTeam = setUpNewTeam(teamName);
-        assertEquals("name", testTeam.getTeamName(teamName));
+        Team testTeam = setUpNewTeam();
+        assertEquals("", testTeam.getTeamName());
     }
 
-
+    @Test
+    public void teamClassInstantiatesCorrectly_withDescription() throws Exception {
+        Team testTeam = setUpNewTeam();
+        assertEquals("", testTeam.getTeamDescription());
+    }
 
     @After
     public void tearDown() throws Exception {
     }
 
-    public static Team setUpNewTeam(String userInput) {
-        return new Team(userInput);
+    public static Team setUpNewTeam() {
+        return new Team();
     }
 
 

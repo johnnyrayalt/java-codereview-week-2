@@ -2,12 +2,18 @@ package models;
 
 public class Team {
     private String teamName;
+    private String teamDescription;
 
-    public Team(String userTeamName) {
-        this.teamName = userTeamName;
+    public Team() {
+        this.teamName = "";
+        this.teamDescription = "";
     }
 
-    public String getTeamName(String userTeamName) {
-        return this.teamName = userTeamName;
+    public String getTeamName() {
+        return this.teamName;
+    }
+
+    public String getTeamDescription() {
+        return this.teamDescription;
     }
 }
