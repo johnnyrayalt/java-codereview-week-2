@@ -1,12 +1,11 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Team {
     private String teamName;
     private String teamDescription;
-    private List<String> teamMembers;
+    private ArrayList<String> teamMembers;
 
     public Team() {
         this.teamName = "";
@@ -22,11 +21,20 @@ public class Team {
         return teamDescription;
     }
 
-    public List<String> getTeamMembers() {
+    public ArrayList<String> getTeamMembers() {
         return teamMembers;
     }
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public void setTeamDescription(String teamDescription) {
+        this.teamDescription = teamDescription;
+    }
+
+    public void setTeamMembers(String userInputTeamMemberName) {
+        ArrayList<String> teamMemberRosterSize = getTeamMembers();
+        teamMemberRosterSize.add(userInputTeamMemberName);
     }
 }

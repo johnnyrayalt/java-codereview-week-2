@@ -40,10 +40,34 @@ public class TeamTest {
     }
 
     @Test
-    public void setTeamName_userCanSetTeamName_isTestName() throws Exception {
+    public void setTeamName_userCanSetTeamName_isTest() throws Exception {
         Team testTeam = setUpNewTeam();
         testTeam.setTeamName("test");
         assertEquals("test", testTeam.getTeamName());
+    }
+
+    @Test
+    public void setTeamDescription_userCanSetTeamDescription_isTest() throws Exception {
+        Team testTeam = setUpNewTeam();
+        testTeam.setTeamDescription("test");
+        assertEquals("test", testTeam.getTeamDescription());
+    }
+
+    @Test
+    public void setTeamMembers_userCanAddTeamMembers_is1() throws Exception {
+        Team testTeam = setUpNewTeam();
+        testTeam.setTeamMembers("jeff");
+        ArrayList<String> testTeamMemberSize = testTeam.getTeamMembers();
+        assertEquals(1, testTeamMemberSize.size());
+    }
+
+    @Test
+    public void setTeamMembers_userCanAddTeamMembers_is2() throws Exception {
+        Team testTeam = setUpNewTeam();
+        testTeam.setTeamMembers("jeff");
+        testTeam.setTeamMembers("devin");
+        ArrayList<String> testTeamMemberSize = testTeam.getTeamMembers();
+        assertEquals(2, testTeamMemberSize.size());
     }
 
     @After
