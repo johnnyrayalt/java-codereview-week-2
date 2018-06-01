@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 import models.Team;
 import spark.ModelAndView;
@@ -16,9 +14,11 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String teamName = request.queryParams("teamName");
             String teamDescription = request.queryParams("teamDescription");
+            String teamMembers = request.queryParams("teamMembers");
             Team newTeam = new Team();
             newTeam.setTeamName(teamName);
             newTeam.setTeamDescription(teamDescription);
+            newTeam.setTeamMembers(teamMembers);
             model.put("team", newTeam);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());

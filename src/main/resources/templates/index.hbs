@@ -9,6 +9,9 @@
         <input type="text" id="teamName" name="teamName"><br>
         <label for="teamDescription">Enter a short description about your teams objective</label><br>
         <input type="text" id="teamDescription" name="teamDescription"><br>
+        <label for="teamMembers">Add team members, separate with a comma (ex. Johnny, Devin)</label>
+        <input type="text" id="teamMembers" name="teamMembers">
+
 
         <button class="btn btn-success" type="submit">Submit!</button>
     </form>
@@ -22,6 +25,8 @@
                     <p>{{this.teamName}}</p>
                     <p>Team Description</p>
                     <p>{{this.teamDescription}}</p>
+                    <p>Team Members</p>
+                    <p>{{this.teamMembers}}</p>
                 </li>
            {{/each}}
         </ul>

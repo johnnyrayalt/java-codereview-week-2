@@ -1,6 +1,8 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Team {
     private String teamName;
@@ -23,7 +25,7 @@ public class Team {
         return teamDescription;
     }
 
-    public ArrayList<String> getTeamMembers() {
+    public List<String> getTeamMembers() {
         return teamMembers;
     }
 
@@ -39,9 +41,8 @@ public class Team {
         this.teamDescription = teamDescription;
     }
 
-    public void setTeamMembers(String userInputTeamMemberName) {
-        ArrayList<String> teamMemberRosterSize = getTeamMembers();
-        teamMemberRosterSize.add(userInputTeamMemberName);
+    public void setTeamMembers(String stringUserInputTeamMemberName) {
+        this.teamMembers = new ArrayList<>(Arrays.asList(stringUserInputTeamMemberName.split("\\s*,\\s*")));
     }
 
 
