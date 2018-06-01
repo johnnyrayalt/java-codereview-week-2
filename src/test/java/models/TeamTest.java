@@ -39,6 +39,13 @@ public class TeamTest {
         assertEquals(expected, testTeam.getTeamMembers());
     }
 
+    @Test
+    public void setTeamName_userCanSetTeamName_isTestName() throws Exception {
+        Team testTeam = setUpNewTeam();
+        testTeam.setTeamName("test");
+        assertEquals("test", testTeam.getTeamName());
+    }
+
     @After
     public void tearDown() throws Exception {
     }
