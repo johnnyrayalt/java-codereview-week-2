@@ -9,12 +9,14 @@ public class Team {
     private String teamDescription;
     private ArrayList<String> teamMembers;
     private static ArrayList<Team> instances = new ArrayList<>();
+    private int id;
 
     public Team() {
         this.teamName = "";
         this.teamDescription = "";
         this.teamMembers = new ArrayList<>();
         instances.add(this);
+        this.id = instances.size();
     }
 
     public String getTeamName() {
@@ -45,6 +47,11 @@ public class Team {
         this.teamMembers = new ArrayList<>(Arrays.asList(stringUserInputTeamMemberName.split("\\s*,\\s*")));
     }
 
+    public int getId() {
+        return id;
+    }
 
-
+    public static Team findById(int id) {
+        return instances.get(id-1);
+    }
 }

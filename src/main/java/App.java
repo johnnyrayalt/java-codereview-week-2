@@ -10,7 +10,7 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        post("/post/new", (request, response) -> {
+        post("/team/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String teamName = request.queryParams("teamName");
             String teamDescription = request.queryParams("teamDescription");
@@ -28,6 +28,14 @@ public class App {
             ArrayList<Team> team = Team.getAll();
             model.put("team", team);
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/team/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToFind = Integer.parseInt(request.params("id"));
+            Team foundTeam = Team.findById(idOfPostToFind);
+            model.put("team", foundTeam);
+            return new ModelAndView(model, "team-details.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
