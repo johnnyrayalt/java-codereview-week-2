@@ -15,8 +15,10 @@ public class App {
         post("/post/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String teamName = request.queryParams("teamName");
+            String teamDescription = request.queryParams("teamDescription");
             Team newTeam = new Team();
             newTeam.setTeamName(teamName);
+            newTeam.setTeamDescription(teamDescription);
             model.put("team", newTeam);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());

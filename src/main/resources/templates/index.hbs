@@ -5,8 +5,10 @@
     <p class="center">To register a team, fill out and submit the form below</p>
 
     <form action="/post/new" method="POST">
-        <label for="teamName">Enter your Team Name:</label>
-        <input type="text" id="teamName" name="teamName">
+        <label for="teamName">Enter your Team Name:</label><br>
+        <input type="text" id="teamName" name="teamName"><br>
+        <label for="teamDescription">Enter a short description about your teams objective</label><br>
+        <input type="text" id="teamDescription" name="teamDescription"><br>
 
         <button class="btn btn-success" type="submit">Submit!</button>
     </form>
@@ -18,6 +20,8 @@
                 <li>
                     <p>Team Name</p>
                     <p>{{this.teamName}}</p>
+                    <p>Team Description</p>
+                    <p>{{this.teamDescription}}</p>
                 </li>
            {{/each}}
         </ul>
