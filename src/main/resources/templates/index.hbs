@@ -12,6 +12,18 @@
     </form>
 
 
+    {{#if team}}
+        <ul>
+            {{#each team}}
+                <li>
+                    <p>Team Name</p>
+                    <p>{{this.teamName}}</p>
+                </li>
+           {{/each}}
+        </ul>
+    {{/if}}
+
+
 {{/partial}}
 
 {{> layout.hbs}}
