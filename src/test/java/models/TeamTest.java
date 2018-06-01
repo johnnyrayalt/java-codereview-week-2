@@ -65,7 +65,7 @@ public class TeamTest {
     public void setTeamMembers_userCanAddTeamMembers_is2() throws Exception {
         Team testTeam = setUpNewTeam();
         testTeam.setTeamMembers("jeff");
-        testTeam.setTeamMembers("devin");
+        testTeam.addTeamMembers("devin");
         ArrayList<String> testTeamMemberSize = testTeam.getTeamMembers();
         assertEquals(2, testTeamMemberSize.size());
     }
@@ -77,6 +77,12 @@ public class TeamTest {
         assertEquals(true, Team.getAll().contains(testTeam));
         assertEquals(true, Team.getAll().contains(otherTestTeam));
         assertEquals(2, Team.getAll().size());
+    }
+
+    @Test
+    public void addTeamMember_returnsUpdatedTeamMemberList_isTrue() {
+        Team testTeam = setUpNewTeam();
+
     }
 
     @After

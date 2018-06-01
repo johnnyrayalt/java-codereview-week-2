@@ -27,7 +27,7 @@ public class Team {
         return teamDescription;
     }
 
-    public List<String> getTeamMembers() {
+    public ArrayList<String> getTeamMembers() {
         return teamMembers;
     }
 
@@ -47,11 +47,13 @@ public class Team {
         this.teamMembers = new ArrayList<>(Arrays.asList(stringUserInputTeamMemberName.split("\\s*,\\s*")));
     }
 
-    public int getId() {
-        return id;
+    
+    public void addTeamMembers(String newTeamMembers) {
+        this.teamMembers.add(newTeamMembers);
     }
 
     public static Team findById(int id) {
         return instances.get(id-1);
     }
+
 }
