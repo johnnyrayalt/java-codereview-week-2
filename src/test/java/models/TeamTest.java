@@ -70,7 +70,12 @@ public class TeamTest {
         assertEquals(2, testTeamMemberSize.size());
     }
 
-    
+    @Test
+    public void getAll_returnsAllInstancesOfTeamClass_true() {
+        Team testTeam = setUpNewTeam();
+        Team otherTestTeam = new Team();
+        assertEquals(2, Team.getAll().size());
+    }
 
     @After
     public void tearDown() throws Exception {

@@ -6,11 +6,13 @@ public class Team {
     private String teamName;
     private String teamDescription;
     private ArrayList<String> teamMembers;
+    private static ArrayList<Team> instances = new ArrayList<>();
 
     public Team() {
         this.teamName = "";
         this.teamDescription = "";
         this.teamMembers = new ArrayList<>();
+        instances.add(this);
     }
 
     public String getTeamName() {
@@ -29,6 +31,10 @@ public class Team {
         this.teamName = teamName;
     }
 
+    public static ArrayList<Team> getAll() {
+        return instances;
+    }
+
     public void setTeamDescription(String teamDescription) {
         this.teamDescription = teamDescription;
     }
@@ -37,6 +43,7 @@ public class Team {
         ArrayList<String> teamMemberRosterSize = getTeamMembers();
         teamMemberRosterSize.add(userInputTeamMemberName);
     }
+
 
 
 }
