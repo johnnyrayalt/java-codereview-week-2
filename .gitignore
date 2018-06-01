@@ -35,12 +35,14 @@ out/
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+.idea/*
 
 # JIRA plugin
 atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
 .idea/replstate.xml
+
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
@@ -50,3 +52,9 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+setting.gradle
+gradlew
+gradlew.bat
+gradle/*
+.gradle/*
