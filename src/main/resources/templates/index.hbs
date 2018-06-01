@@ -6,11 +6,11 @@
 
     <form action="/team/new" method="POST">
         <label for="teamName">Enter your Team Name:</label><br>
-        <input type="text" id="teamName" name="teamName"><br>
+        <input type="text" id="teamName" name="teamName" value="name"><br>
         <label for="teamDescription">Enter a short description about your teams objective</label><br>
-        <input type="text" id="teamDescription" name="teamDescription"><br>
+        <input type="text" id="teamDescription" name="teamDescription" value="description"><br>
         <label for="teamMembers">Add team members, separate with a comma (ex. Johnny, Devin)</label>
-        <input type="text" id="teamMembers" name="teamMembers">
+        <input type="text" id="teamMembers" name="teamMembers" value="johnny, devin">
 
         <button class="btn btn-success" type="submit">Submit!</button>
     </form>

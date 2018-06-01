@@ -37,5 +37,24 @@ public class App {
             model.put("team", foundTeam);
             return new ModelAndView(model, "team-details.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get("/team/:id/update", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToEdit = Integer.parseInt(request.params("id"));
+            Team editTeam = Team.findById(idOfPostToEdit);
+            model.put("editTeam", editTeam);
+            return new ModelAndView(model, "team-update-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        post("team/:id/update", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfPostToEdit = Integer.parseInt(request.params("id"));
+            Team updateTeam = Team.findById(idOfPostToEdit);
+            String newTeamName = request.queryParams("teamName");
+            String newTeamMembers = request.queryParams("teamMembers");
+            updateTeam.setTeamName(newTeamName);
+            updateTeam.addTeamMembers(newTeamMembers);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }

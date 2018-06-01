@@ -47,7 +47,10 @@ public class Team {
         this.teamMembers = new ArrayList<>(Arrays.asList(stringUserInputTeamMemberName.split("\\s*,\\s*")));
     }
 
-    
+    public int getId() {
+        return id;
+    }
+
     public void addTeamMembers(String newTeamMembers) {
         this.teamMembers.add(newTeamMembers);
     }
