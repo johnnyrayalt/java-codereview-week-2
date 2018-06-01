@@ -74,6 +74,8 @@ public class TeamTest {
     public void getAll_returnsAllInstancesOfTeamClass_true() {
         Team testTeam = setUpNewTeam();
         Team otherTestTeam = new Team();
+        assertEquals(true, Team.getAll().contains(testTeam));
+        assertEquals(true, Team.getAll().contains(otherTestTeam));
         assertEquals(2, Team.getAll().size());
     }
 
