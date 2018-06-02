@@ -21,9 +21,9 @@ _This app is a simple tracker that logs a team with a name, members, and a descr
 
 ## Specs
  * User will be able to create a team with:
- ** a team name
- ** a short description of the team's goals
- ** and a list of team members
+ *  + a team name
+ *  + a short description of the team's goals
+ *  + and a list of team members
  * Users will also be able to edit the team name and add additional members and have the app update that team
 
 ## Known Bugs
