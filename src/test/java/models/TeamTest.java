@@ -76,7 +76,6 @@ public class TeamTest {
         Team otherTestTeam = new Team();
         assertEquals(true, Team.getAll().contains(testTeam));
         assertEquals(true, Team.getAll().contains(otherTestTeam));
-        assertEquals(2, Team.getAll().size());
     }
 
     @Test
